@@ -11,4 +11,10 @@ INSERT INTO vehicles (make, model, category, price, quantity, year, description)
 ('Guido', 'Fiat Pit Stop', 'HATCHBACK', 22000.00, 10, 2005, 'Pit stop!'),
 ('Finn', 'McMissile Spy', 'CONVERTIBLE', 120000.00, 2, 2022, 'British intelligence at its finest.'),
 ('Cruz', 'Ramirez Sport', 'SUV', 65000.00, 8, 2025, 'The next-gen racer.'),
-('Tesla', 'Model S Plaid', 'ELECTRIC', 110000.00, 4, 2025, 'Ludicrous speed, electric style.');
+('Tesla', 'Model S Plaid', 'ELECTRIC', 110000.00, 4, 2025, 'Ludicrous speed, electric style.'),
+('Luigi', 'Fiat 500 Classic', 'HATCHBACK', 18000.00, 5, 1959, 'Luigi only follows the Ferraris!'),
+('Mack', 'Super-Liner Transporter', 'TRUCK', 85000.00, 2, 2006, 'I got your back, kid.'),
+('Jackson', 'Storm Next-Gen', 'COUPE', 105000.00, 3, 2017, 'I can run circles around you.'),
+('Rust-eze', 'Rusty Bumper Ointment', 'VAN', 12000.00, 1, 1994, 'With just a little Rust-eze, you can look like me!'),
+('Darrell', 'Cartrip Classic', 'SEDAN', 40000.00, 1, 2006, 'Boogity Boogity Boogity, let''s go racing boys!'),
+('King', 'Plymouth Superbird', 'COUPE', 90000.00, 2, 1970, 'The legend of Dinoco.');
