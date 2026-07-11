@@ -136,7 +136,7 @@ export default function DashboardPage() {
           <div className="spinning-tire" />
           <h3 className="brand-font glow-yellow" style={{ marginTop: '20px' }}>Polishing Showroom Models...</h3>
         </div>
-      ) : vehicles.length === 0 ? (
+      ) : (!Array.isArray(vehicles) || vehicles.length === 0) ? (
         <div style={{
           textAlign: 'center',
           padding: '50px 20px',
@@ -154,7 +154,7 @@ export default function DashboardPage() {
           gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
           gap: '30px'
         }}>
-          {vehicles.map(vehicle => (
+          {Array.isArray(vehicles) && vehicles.map(vehicle => (
             <VehicleCard
               key={vehicle.id}
               vehicle={vehicle}
