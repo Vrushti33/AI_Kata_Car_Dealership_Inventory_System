@@ -7,7 +7,8 @@ import ProtectedRoute from './routes/ProtectedRoute';
 import AdminRoute from './routes/AdminRoute';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import { DashboardPage, AddVehiclePage, EditVehiclePage } from './pages/Placeholders';
+import DashboardPage from './pages/DashboardPage';
+import { AddVehiclePage, EditVehiclePage } from './pages/Placeholders';
 import './index.css';
 
 function App() {

@@ -1,19 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export function DashboardPage() {
-  return (
-    <div style={{ padding: '40px', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-      <h2 className="brand-font glow-yellow" style={{ color: 'var(--accent-yellow)', marginBottom: '20px' }}>
-        Showroom Floor
-      </h2>
-      <p style={{ color: 'var(--text-muted)' }}>
-        This is a placeholder for the Dashboard Page. In Phase 6, we will implement the interactive vehicle card grid and search parameters.
-      </p>
-    </div>
-  );
-}
-
 export function AddVehiclePage() {
   return (
     <div style={{ padding: '40px', maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
