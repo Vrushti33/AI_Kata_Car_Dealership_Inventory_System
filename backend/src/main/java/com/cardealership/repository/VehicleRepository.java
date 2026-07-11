@@ -14,8 +14,8 @@ import java.util.List;
 public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
 
     @Query("SELECT v FROM Vehicle v WHERE " +
-            "(cast(:make as string) IS NULL OR LOWER(v.make) LIKE LOWER(CONCAT('%', cast(:make as string), '%'))) AND " +
-            "(cast(:model as string) IS NULL OR LOWER(v.model) LIKE LOWER(CONCAT('%', cast(:model as string), '%'))) AND " +
+            "(cast(:make as string) IS NULL OR LOWER(v.make) LIKE LOWER(CONCAT('%', cast(:make as string), '%')) OR LOWER(v.model) LIKE LOWER(CONCAT('%', cast(:make as string), '%'))) AND " +
+            "(cast(:model as string) IS NULL OR LOWER(v.make) LIKE LOWER(CONCAT('%', cast(:model as string), '%')) OR LOWER(v.model) LIKE LOWER(CONCAT('%', cast(:model as string), '%'))) AND " +
             "(:category IS NULL OR v.category = :category) AND " +
             "(:minPrice IS NULL OR v.price >= :minPrice) AND " +
             "(:maxPrice IS NULL OR v.price <= :maxPrice)")
