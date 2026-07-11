@@ -18,8 +18,19 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
         
         config.setAllowCredentials(true);
-        // Add local development address, plus wildcards if needed
-        config.setAllowedOriginPatterns(Collections.singletonList("*"));
+        
+        // Read allowed origins from environment variable in production, fallback to wildcard patterns for dev
+        String allowedOriginsEnv = System.getProperty("CORS_ALLOWED_ORIGINS");
+        if (allowedOriginsEnv == null) {
+            allowedOriginsEnv = System.getenv("CORS_ALLOWED_ORIGINS");
+        }
+        
+        if (allowedOriginsEnv != null && !allowedOriginsEnv.trim().isEmpty()) {
+            config.setAllowedOrigins(Arrays.asList(allowedOriginsEnv.split(",")));
+        } else {
+            config.setAllowedOriginPatterns(Collections.singletonList("*"));
+        }
+        
         config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization", "Cookie"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         
