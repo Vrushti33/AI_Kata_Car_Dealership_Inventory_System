@@ -1,6 +1,7 @@
 package com.cardealership.dto;
 
 import com.cardealership.entity.Category;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -18,7 +19,7 @@ public class VehicleRequest {
     private Category category;
 
     @NotNull(message = "Price is required")
-    @Min(value = 0, message = "Price must be non-negative")
+    @DecimalMin(value = "0.01", message = "Price must be greater than 0")
     private BigDecimal price;
 
     @NotNull(message = "Quantity is required")

@@ -62,8 +62,8 @@ export default function VehicleForm({ initialData, onSubmit, title, buttonText }
 
     // Price validation
     const priceNum = parseFloat(formData.price);
-    if (formData.price === '' || isNaN(priceNum) || priceNum < 0) {
-      newErrors.price = 'Price must be a positive decimal >= 0.';
+    if (formData.price === '' || isNaN(priceNum) || priceNum <= 0) {
+      newErrors.price = 'Price must be a positive decimal greater than 0.';
     }
 
     // Quantity validation
@@ -211,7 +211,7 @@ export default function VehicleForm({ initialData, onSubmit, title, buttonText }
                 onChange={handleChange}
                 placeholder="95000.00"
                 step="0.01"
-                min="0"
+                min="0.01"
                 required
               />
               {errors.price && <span style={{ color: '#ff8a9a', fontSize: '11px' }}>{errors.price}</span>}

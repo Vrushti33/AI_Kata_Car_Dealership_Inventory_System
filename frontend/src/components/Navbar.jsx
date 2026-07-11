@@ -62,7 +62,7 @@ export default function Navbar() {
                 border: '1px solid var(--accent-yellow)',
                 padding: '4px 10px',
                 borderRadius: 'var(--border-radius-sm)'
-              }}>Admin Panel</Link>
+              }}>Add New Model</Link>
             )}
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
