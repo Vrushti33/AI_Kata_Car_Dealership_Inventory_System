@@ -8,7 +8,8 @@ import AdminRoute from './routes/AdminRoute';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
-import { AddVehiclePage, EditVehiclePage } from './pages/Placeholders';
+import AddVehiclePage from './pages/AddVehiclePage';
+import EditVehiclePage from './pages/EditVehiclePage';
 import './index.css';
 
 function App() {
