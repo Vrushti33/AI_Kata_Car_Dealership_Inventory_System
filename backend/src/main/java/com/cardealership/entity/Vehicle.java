@@ -38,6 +38,7 @@ public class Vehicle {
     @Column(nullable = false)
     private Integer quantity = 0;
 
+    @Column(name = "\"year\"")
     private Integer year;
 
     @Column(columnDefinition = "TEXT")

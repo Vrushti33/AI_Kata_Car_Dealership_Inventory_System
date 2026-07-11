@@ -103,7 +103,7 @@ public class VehicleRepositoryTest {
     @Test
     public void shouldSearchByMultipleCriteria() {
         List<Vehicle> found = vehicleRepository.search(
-                "M", "Special", Category.COUPE, new BigDecimal("80000.00"), new BigDecimal("100000.00")
+                "Light", "Special", Category.COUPE, new BigDecimal("80000.00"), new BigDecimal("100000.00")
         );
         assertThat(found).hasSize(1);
         assertThat(found.get(0).getModel()).isEqualTo("McQueen Special");
