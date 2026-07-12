@@ -187,3 +187,16 @@ Integrating AI into this coding cycle fundamentally redefined the development sp
 1. **Parallel Testing**: Writing tests and features concurrently is a bit slow; delegating boilerplate setup (such as MockMvc request builders and assertions) enabled complete test coverage without slowing down execution.
 2. **Instant Debugging**: Instead of spending hours investigating obscure environment warnings (like the PostgreSQL parameter type inference crash or Java compiler major version compilation errors on JDK 25), I was able to get detailed root-cause analyses and code fix recommendations instantly.
 3. **Focus on Quality**: AI handled structural layouts, repetitive properties mappings, and custom CSS styling rules, allowing me to focus heavily on the data transactional safety, clean coding principles, and end-to-end integration safety.
+
+---
+
+## Application Screenshots
+<img width="1920" height="1140" alt="Screenshot 2026-07-12 154503" src="https://github.com/user-attachments/assets/61e0f5f3-a5c2-412a-9054-43997470b08f" />
+<img width="1920" height="1140" alt="Screenshot 2026-07-12 154603" src="https://github.com/user-attachments/assets/104b16de-493a-4f18-8689-5134fab7a66d" />
+<img width="1920" height="1140" alt="Screenshot 2026-07-12 154747" src="https://github.com/user-attachments/assets/17ed48ac-6dc5-401c-839d-bf40a1299fca" />
+<img width="1920" height="1140" alt="Screenshot 2026-07-12 154853" src="https://github.com/user-attachments/assets/96247390-ae5b-450b-991e-6666ecca92b2" />
+<img width="1920" height="1140" alt="Screenshot 2026-07-12 154951" src="https://github.com/user-attachments/assets/ca9dc370-5d07-4c26-8869-c5974e04e159" />
+<img width="1920" height="1140" alt="Screenshot 2026-07-12 155000" src="https://github.com/user-attachments/assets/85719809-df5f-4a2d-a640-2e7ab2c3c7fe" />
+<img width="1920" height="1140" alt="Screenshot 2026-07-12 155018" src="https://github.com/user-attachments/assets/18ad3fed-7b17-40a0-a394-a642a297ac7e" />
+<img width="1920" height="1140" alt="Screenshot 2026-07-12 154841" src="https://github.com/user-attachments/assets/d639dad7-8fbf-491c-a901-3a86bec986e1" />
+<img width="1920" height="1140" alt="Screenshot 2026-07-12 155023" src="https://github.com/user-attachments/assets/fa9a7c7c-212a-488a-a241-4d3c9a265c63" />
