@@ -37,3 +37,14 @@ export const getVehicleById = async (id) => {
   const response = await api.get(`/vehicles/${id}`);
   return response.data;
 };
+
+export const getMyPurchases = async () => {
+  const response = await api.get('/vehicles/purchases/my');
+  return response.data;
+};
+
+export const getAllPurchases = async () => {
+  const response = await api.get('/vehicles/purchases');
+  return response.data;
+};
+

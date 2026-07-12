@@ -159,4 +159,57 @@ public class InventoryServiceTest {
             inventoryService.restock(1L, -5);
         });
     }
+
+    @Test
+    public void shouldGetMyPurchases() {
+        // Arrange
+        Purchase purchase = new Purchase();
+        purchase.setId(10L);
+        purchase.setUser(buyer);
+        purchase.setVehicle(mcqueen);
+        purchase.setQuantity(1);
+        purchase.setTotalPrice(mcqueen.getPrice());
+
+        when(userRepository.findByEmail("buyer@route66.com")).thenReturn(Optional.of(buyer));
+        when(purchaseRepository.findByUserId(1L)).thenReturn(java.util.List.of(purchase));
+
+        // Act
+        java.util.List<PurchaseResponse> result = inventoryService.getMyPurchases("buyer@route66.com");
+
+        // Assert
+        assertThat(result).hasSize(1);
+        assertThat(result.get(0).getPurchaseId()).isEqualTo(10L);
+        assertThat(result.get(0).getBuyerEmail()).isEqualTo("buyer@route66.com");
+    }
+
+    @Test
+    public void shouldGetAllPurchases() {
+        // Arrange
+        Purchase purchase = new Purchase();
+        purchase.setId(10L);
+        purchase.setUser(buyer);
+        purchase.setVehicle(mcqueen);
+        purchase.setQuantity(1);
+        purchase.setTotalPrice(mcqueen.getPrice());
+
+        when(purchaseRepository.findAll()).thenReturn(java.util.List.of(purchase));
+
+        // Act
+        java.util.List<PurchaseResponse> result = inventoryService.getAllPurchases();
+
+        // Assert
+        assertThat(result).hasSize(1);
+        assertThat(result.get(0).getPurchaseId()).isEqualTo(10L);
+    }
+
+    @Test
+    public void shouldThrowWhenGettingMyPurchasesForNonExistentUser() {
+        // Arrange
+        when(userRepository.findByEmail("ghost@route66.com")).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThrows(UsernameNotFoundException.class, () -> {
+            inventoryService.getMyPurchases("ghost@route66.com");
+        });
+    }
 }

@@ -52,6 +52,15 @@ export default function Navbar() {
               fontFamily: 'Russo One',
               fontSize: '14px'
             }}>Showroom</Link>
+
+            <Link to="/purchases" style={{
+              color: 'var(--text-cream)',
+              textDecoration: 'none',
+              fontFamily: 'Russo One',
+              fontSize: '14px'
+            }}>
+              {isAdmin(user) ? 'System Logs' : 'My Orders'}
+            </Link>
             
             {isAdmin(user) && (
               <Link to="/admin/add" style={{

@@ -121,4 +121,33 @@ public class InventoryControllerTest {
                 .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isForbidden());
     }
+
+    @Test
+    @WithMockUser(username = "buyer@route66.com", roles = {"USER"})
+    public void shouldGetMyPurchasesAsUser() throws Exception {
+        when(inventoryService.getMyPurchases(eq("buyer@route66.com"))).thenReturn(java.util.List.of(purchaseResponse));
+
+        mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get("/api/vehicles/purchases/my"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].purchaseId").value(10L))
+                .andExpect(jsonPath("$[0].buyerEmail").value("buyer@route66.com"));
+    }
+
+    @Test
+    @WithMockUser(username = "admin@route66.com", roles = {"ADMIN"})
+    public void shouldGetAllPurchasesAsAdmin() throws Exception {
+        when(inventoryService.getAllPurchases()).thenReturn(java.util.List.of(purchaseResponse));
+
+        mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get("/api/vehicles/purchases"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].purchaseId").value(10L))
+                .andExpect(jsonPath("$[0].buyerEmail").value("buyer@route66.com"));
+    }
+
+    @Test
+    @WithMockUser(username = "user@route66.com", roles = {"USER"})
+    public void shouldDenyGetAllPurchasesAsRegularUser() throws Exception {
+        mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get("/api/vehicles/purchases"))
+                .andExpect(status().isForbidden());
+    }
 }

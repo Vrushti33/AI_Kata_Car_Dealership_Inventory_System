@@ -205,6 +205,30 @@ All endpoints are prefixed with `/api`.
   * *Increments vehicle stock quantity by request amount*
   * *Response Body*: Returns updated vehicle details.
 
+#### 3. Get My Purchases
+* **Endpoint**: `GET /api/vehicles/purchases/my`
+* **Access**: Authenticated
+* **Response (HTTP 200 OK)**:
+  ```json
+  [
+    {
+      "purchaseId": 10,
+      "buyerEmail": "customer1@route66.com",
+      "buyerName": "Sally Carrera",
+      "vehicleId": 1,
+      "vehicleDetails": "Lightning McQueen Special",
+      "quantity": 1,
+      "totalPrice": 95000.00,
+      "purchasedAt": "2026-07-12T12:35:10"
+    }
+  ]
+  ```
+
+#### 4. Get All Purchases
+* **Endpoint**: `GET /api/vehicles/purchases`
+* **Access**: **Admin Only** (Fails with `403 Forbidden` if regular user attempts)
+* **Response (HTTP 200 OK)**: A JSON array of all model purchases recorded across the dealership inventory system (same structure as above).
+
 ---
 
 ## 2. Testing Steps in Postman

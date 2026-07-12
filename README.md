@@ -51,13 +51,17 @@ The application is built with a secure, high-performance **Spring Boot 3** Java 
 * **Admin Management**: Direct restock tools (adding quantity units to existing cars) and complete CRUD panel to import/edit catalog specifications.
 * **Price Boundaries**: Frontend HTML5 inputs and backend `@DecimalMin` validation strictly block zero-dollar ($0.00) or negative price entries.
 
-### 4. Code Quality & Test Suite
-* Over **66+ passing test cases** validating:
+### 4. Historic Transaction Logs
+* **Personal Receipts**: Logged-in customers can track their own purchases (Receipt Log) showing quantities, model specs, pricing, and dates.
+* **Master Ledger**: Admins can inspect the system-wide catalog purchase records (System Logs) detailing buyer names, email addresses, order details, and precise transaction timestamps.
+
+### 5. Code Quality & Test Suite
+* Over **72+ passing test cases** validating:
   * Database entity parsing and custom repository JPQL queries.
   * JWT generation, expiration boundaries, and filter validation.
   * AuthService registry conflicts and login matches.
-  * Vehicle and Inventory CRUD service transactions.
-  * Role authorization guards and error translations.
+  * Vehicle, Inventory CRUD, and Purchase History logs service transactions.
+  * Role authorization guards and error translations for purchase logs.
   * Full end-to-end integration flows.
 
 ---
@@ -87,7 +91,7 @@ AI_Kata_Car_Dealership_Inventory_System/
 │   │   ├── components/            # Reusable components (Navbar, Footer, VehicleCard)
 │   │   ├── context/               # AuthContext managing user sessions
 │   │   ├── hooks/                 # Custom hooks (useDebounce)
-│   │   ├── pages/                 # SPA Pages (Dashboard, Login, Register, Add/Edit Forms)
+│   │   ├── pages/                 # SPA Pages (Dashboard, Login, Register, Add/Edit, PurchasesPage)
 │   │   ├── routes/                # ProtectedRoute and AdminRoute guards
 │   │   ├── index.css              # Global styles and design system variables
 │   │   └── App.jsx                # Router switch mapping

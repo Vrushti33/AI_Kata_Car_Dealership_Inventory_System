@@ -12,6 +12,7 @@ import AddVehiclePage from './pages/AddVehiclePage';
 import EditVehiclePage from './pages/EditVehiclePage';
 import NotFoundPage from './pages/NotFoundPage';
 import ErrorBoundary from './components/ErrorBoundary';
+import PurchasesPage from './pages/PurchasesPage';
 import './index.css';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                 {/* Protected Showroom Routes */}
                 <Route element={<ProtectedRoute />}>
                   <Route path="/" element={<DashboardPage />} />
+                  <Route path="/purchases" element={<PurchasesPage />} />
                 </Route>
 
                 {/* Admin-Only Management Routes */}
