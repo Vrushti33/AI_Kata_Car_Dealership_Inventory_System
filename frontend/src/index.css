@@ -172,3 +172,88 @@ h1, h2, h3, h4, h5, h6, .brand-font {
   font-size: 14px;
 }
 
+/* Skeleton Loading Shimmer */
+.skeleton-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Page Transition Fade-In */
+.page-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Breakpoints & Accessibility Styling */
+@media (max-width: 1280px) {
+  /* Adjusted grid layout padding for large tablets/laptops */
+  .grid-container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Medium tablets */
+  .desert-card {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Small tablets / mobile phones in landscape */
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .fuel-input, .nitro-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Extra small mobile screens */
+  .brand-font {
+    font-size: 18px !important;
+  }
+  
+  .desert-card {
+    padding: 15px;
+  }
+}
+
+

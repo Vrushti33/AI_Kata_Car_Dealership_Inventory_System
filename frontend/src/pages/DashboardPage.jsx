@@ -93,7 +93,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <div style={{ padding: '30px', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+    <div className="page-fade-in" style={{ padding: '30px', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
       {/* Show alerts/notices */}
       {alertMessage.text && (
         <div style={{
@@ -132,9 +132,46 @@ export default function DashboardPage() {
 
       {/* Grid of Vehicles */}
       {loading ? (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '40vh' }}>
-          <div className="spinning-tire" />
-          <h3 className="brand-font glow-yellow" style={{ marginTop: '20px' }}>Polishing Showroom Models...</h3>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+          gap: '30px'
+        }}>
+          {[1, 2, 3, 4, 5, 6].map(i => (
+            <div key={i} className="skeleton-card" style={{
+              height: '380px',
+              background: 'var(--surface-dark)',
+              borderRadius: 'var(--border-radius-lg)',
+              border: '1.5px solid rgba(255,255,255,0.05)',
+              padding: '25px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              <div className="skeleton-shimmer" />
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+                  <div style={{ width: '60px', height: '20px', background: 'rgba(255,255,255,0.05)', borderRadius: 'var(--border-radius-sm)' }} />
+                  <div style={{ width: '50px', height: '20px', background: 'rgba(255,255,255,0.05)', borderRadius: 'var(--border-radius-sm)' }} />
+                </div>
+                <div style={{ width: '70%', height: '28px', background: 'rgba(255,255,255,0.05)', borderRadius: 'var(--border-radius-sm)', marginBottom: '15px' }} />
+                <div style={{ width: '40%', height: '20px', background: 'rgba(255,255,255,0.05)', borderRadius: 'var(--border-radius-sm)' }} />
+              </div>
+              <div style={{ margin: '20px 0' }}>
+                <div style={{ width: '50%', height: '14px', background: 'rgba(255,255,255,0.03)', borderRadius: 'var(--border-radius-sm)', marginBottom: '8px' }} />
+                <div style={{ width: '90%', height: '14px', background: 'rgba(255,255,255,0.03)', borderRadius: 'var(--border-radius-sm)' }} />
+              </div>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+                  <div style={{ width: '100px', height: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: 'var(--border-radius-sm)' }} />
+                  <div style={{ width: '80px', height: '24px', background: 'rgba(255,255,255,0.05)', borderRadius: 'var(--border-radius-sm)' }} />
+                </div>
+                <div style={{ width: '100%', height: '45px', background: 'rgba(255,255,255,0.05)', borderRadius: 'var(--border-radius-sm)' }} />
+              </div>
+            </div>
+          ))}
         </div>
       ) : (!Array.isArray(vehicles) || vehicles.length === 0) ? (
         <div style={{

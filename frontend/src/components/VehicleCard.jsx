@@ -18,6 +18,10 @@ export default function VehicleCard({ vehicle, onPurchase, onEdit, onDelete }) {
   const [purchasing, setPurchasing] = useState(false);
 
   const gradient = CATEGORY_GRADIENTS[vehicle.category] || 'linear-gradient(135deg, #333 0%, #111 100%)';
+  const headerBackground = vehicle.imageUrl
+    ? `linear-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%), url(${vehicle.imageUrl}) center/cover no-repeat`
+    : gradient;
+
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -62,7 +66,7 @@ export default function VehicleCard({ vehicle, onPurchase, onEdit, onDelete }) {
       {/* Category header card graphics */}
       <div style={{
         height: '140px',
-        background: gradient,
+        background: headerBackground,
         padding: '20px',
         display: 'flex',
         flexDirection: 'column',

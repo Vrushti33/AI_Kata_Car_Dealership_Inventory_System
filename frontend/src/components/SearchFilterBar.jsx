@@ -40,7 +40,7 @@ export default function SearchFilterBar({
       }}>
         {/* Search Make/Model */}
         <div>
-          <label style={{ fontSize: '11px', fontFamily: 'Russo One', color: 'var(--text-cream)' }}>
+          <label id="search-make-model-label" style={{ fontSize: '11px', fontFamily: 'Russo One', color: 'var(--text-cream)' }}>
             Search Make/Model
           </label>
           <input
@@ -50,12 +50,13 @@ export default function SearchFilterBar({
             onChange={(e) => setSearch(e.target.value)}
             placeholder="e.g. Lightning"
             style={{ padding: '10px' }}
+            aria-labelledby="search-make-model-label"
           />
         </div>
 
         {/* Category select */}
         <div>
-          <label style={{ fontSize: '11px', fontFamily: 'Russo One', color: 'var(--text-cream)' }}>
+          <label id="search-category-label" style={{ fontSize: '11px', fontFamily: 'Russo One', color: 'var(--text-cream)' }}>
             Category
           </label>
           <select
@@ -63,6 +64,7 @@ export default function SearchFilterBar({
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             style={{ padding: '10px', cursor: 'pointer' }}
+            aria-labelledby="search-category-label"
           >
             <option value="">All Categories</option>
             {CATEGORIES.map(cat => (
@@ -73,7 +75,7 @@ export default function SearchFilterBar({
 
         {/* Min Price */}
         <div>
-          <label style={{ fontSize: '11px', fontFamily: 'Russo One', color: 'var(--text-cream)' }}>
+          <label id="search-min-price-label" style={{ fontSize: '11px', fontFamily: 'Russo One', color: 'var(--text-cream)' }}>
             Min Price ($)
           </label>
           <input
@@ -84,12 +86,13 @@ export default function SearchFilterBar({
             placeholder="0"
             style={{ padding: '10px' }}
             min="0"
+            aria-labelledby="search-min-price-label"
           />
         </div>
 
         {/* Max Price */}
         <div>
-          <label style={{ fontSize: '11px', fontFamily: 'Russo One', color: 'var(--text-cream)' }}>
+          <label id="search-max-price-label" style={{ fontSize: '11px', fontFamily: 'Russo One', color: 'var(--text-cream)' }}>
             Max Price ($)
           </label>
           <input
@@ -100,6 +103,7 @@ export default function SearchFilterBar({
             placeholder="Any"
             style={{ padding: '10px' }}
             min="0"
+            aria-labelledby="search-max-price-label"
           />
         </div>
 
