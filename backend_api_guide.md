@@ -341,3 +341,11 @@ Now that you are logged in as admin:
    `http://localhost:8080/api/auth/logout`
 2. Click **Send**.
 3. The cookie will be cleared. If you try to call `GET /api/auth/me` or check the catalog again, you will receive a **`401 Unauthorized`** response.
+
+---
+
+## Postman Screenshots:
+
+<img width="1440" height="693" alt="Screenshot 2026-07-11 175452" src="https://github.com/user-attachments/assets/9a6d9e04-4c4f-48c3-a964-bb29ed6d86fc" />
+<img width="1372" height="727" alt="Screenshot 2026-07-11 175522" src="https://github.com/user-attachments/assets/c4ffae7e-838c-414d-a340-5a3597326e44" />
+<img width="1372" height="607" alt="Screenshot 2026-07-11 175621" src="https://github.com/user-attachments/assets/44cdab32-21bc-4f50-aecd-0f647278f713" />
